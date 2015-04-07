@@ -62,7 +62,7 @@
       <li class="menu-item menu-item-home">
         <a href="/">
           <i class="menu-item-icon icon-home"></i> <br />
-          首頁
+          首页
         </a>
       </li>
     
@@ -70,7 +70,7 @@
       <li class="menu-item menu-item-categories">
         <a href="/categories">
           <i class="menu-item-icon icon-categories"></i> <br />
-          分類
+          分类
         </a>
       </li>
     
@@ -78,7 +78,7 @@
       <li class="menu-item menu-item-archives">
         <a href="/archives">
           <i class="menu-item-icon icon-archives"></i> <br />
-          歸檔
+          归档
         </a>
       </li>
     
@@ -86,7 +86,7 @@
       <li class="menu-item menu-item-tags">
         <a href="/tags">
           <i class="menu-item-icon icon-tags"></i> <br />
-          標籤
+          标签
         </a>
       </li>
     
@@ -125,7 +125,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2015-04-07
+            发表于 2015-04-07
           
         </span>
 
@@ -154,7 +154,7 @@
 
         
           <p><strong>插入排序（Insertion Sort）</strong>是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。[1]</p>
-<p><img src="image/Insertion_sort_animation.gif" alt="">[2]</p>
+<p><img src="../image/Insertion_sort_animation.gif" alt="">[2]</p>
 <p>先来看插入排序的步骤：</p>
 <ul>
 <li>首先假设第i个元素已经有序；</li>
@@ -232,7 +232,7 @@
 <p>c++实例代码如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,t;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t=arr[i];</span><br><span class="line">        <span class="keyword">for</span>(j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span>&amp;&amp;arr[j]&gt;t;j--)</span><br><span class="line">            arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">        arr[j+<span class="number">1</span>]=t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">9</span>]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">6</span>&#125;;</span><br><span class="line">    InsertSort(a,<span class="number">9</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sorted order: "</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">9</span>;k++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
-<p><img src="image/insertsort1.jpg" alt=""></p>
+<p><img src="../image/insertsort1.jpg" alt=""></p>
 <p>下面来分析插入算法的时间复杂度：</p>
 <ul>
 <li>最坏的情况，是逆序。比较次数O(n<sup>2</sup>),移到次数也是O(n<sup>2</sup>)，所以时间复杂度是O(n<sup>2</sup>)。</li>
@@ -305,10 +305,10 @@
     
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-          文章目錄
+          文章目录
         </li>
         <li class="sidebar-nav-overview" data-target="site-overview">
-          本站概覽
+          站点概览
         </li>
       </ul>
     
@@ -322,22 +322,22 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">8</span>
-            <span class="site-state-item-name">文章</span>
+            <span class="site-state-item-count">7</span>
+            <span class="site-state-item-name">日志</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
             <span class="site-state-item-count">2</span>
-            <span class="site-state-item-name">分類</span>
+            <span class="site-state-item-name">分类</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-tags">
           <a href="/tags">
             <span class="site-state-item-count">3</span>
-            <span class="site-state-item-name">標籤</span>
+            <span class="site-state-item-name">标签</span>
           </a>
         </div>
 
@@ -377,7 +377,7 @@
         <div class="post-toc">
           
           
-            <p class="post-toc-empty">此文章未包含目錄</p>
+            <p class="post-toc-empty">此文章未包含目录</p>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -395,7 +395,7 @@
       <div class="footer-inner">
         <div class="copyright">
   
-  &copy; &nbsp; 
+  &copy; &nbsp;  2014 - 
   2015
   <span class="with-love">
     <i class="icon-heart"></i>
@@ -404,11 +404,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>

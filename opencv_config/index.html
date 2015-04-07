@@ -62,7 +62,7 @@
       <li class="menu-item menu-item-home">
         <a href="/">
           <i class="menu-item-icon icon-home"></i> <br />
-          首頁
+          首页
         </a>
       </li>
     
@@ -70,7 +70,7 @@
       <li class="menu-item menu-item-categories">
         <a href="/categories">
           <i class="menu-item-icon icon-categories"></i> <br />
-          分類
+          分类
         </a>
       </li>
     
@@ -78,7 +78,7 @@
       <li class="menu-item menu-item-archives">
         <a href="/archives">
           <i class="menu-item-icon icon-archives"></i> <br />
-          歸檔
+          归档
         </a>
       </li>
     
@@ -86,7 +86,7 @@
       <li class="menu-item menu-item-tags">
         <a href="/tags">
           <i class="menu-item-icon icon-tags"></i> <br />
-          標籤
+          标签
         </a>
       </li>
     
@@ -125,7 +125,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2015-04-07
+            发表于 2015-04-07
           
         </span>
 
@@ -157,17 +157,17 @@
 <p>目前opencv最新版本是是Opencv2.4.11,最新的开发版本是3.0beta。<br>cmake最新版本是cmake3.2.1。</p>
 <p>我本人使用的是opencv2.4.10，cmake3.1.0。</p>
 <h3 id="1-2_opencv下载后的文件夹">1.2 opencv下载后的文件夹</h3><p>opencv包含build和sources这两个文件夹（projects是我自己建立的文件夹）<br><img src="image/opencv_setup1.jpg" alt=""></p>
-<h2 id="二、cmake编译">二、cmake编译</h2><p>2.1 打开cmake,在source code源代码里面填写opencv/sources路径，在build the binaried编译器里面填写编译器VS的版本（视个人情况而定）。本人的如下：<br><img src="image/opencv_cmake.jpg" alt=""></p>
-<p>2.2 点击configure，弹出对话框选中对应的本地编译器，如下：<br><img src="image/opencv_cmake2.jpg" alt=""></p>
+<h2 id="二、cmake编译">二、cmake编译</h2><p>2.1 打开cmake,在source code源代码里面填写opencv/sources路径，在build the binaried编译器里面填写编译器VS的版本（视个人情况而定）。本人的如下：<br><img src="../image/opencv_cmake.jpg" alt=""></p>
+<p>2.2 点击configure，弹出对话框选中对应的本地编译器，如下：<br><img src="../image/opencv_cmake2.jpg" alt=""></p>
 <p>2.3 点击generate，等待编译完成。</p>
-<h2 id="三、vs上的配置">三、vs上的配置</h2><p>3.1 新建工程，建立好之后，在右侧找到属性管理器<br><img src="image/opencv_setup2.jpg" alt=""><br>3.2 在debug上右键，添加新项目属性表，添加好之后，右键，属性<br>3.3 在通用属性/VC++目录中包含目录和库目录添加路径如下：<br><img src="image/opencv_setup3.jpg" alt=""></p>
-<p><img src="image/opencv_setup4.jpg" alt=""><br>3.4 在通用属性/链接器/输入/附加依赖库中添加opencv/build/x86/vc12/lib中末尾带d的lib文件，如下：<br><img src="image/opencv_setup5.jpg" alt=""><br>(根据文件夹里面的内容来填写，图片中只是示例。)<br>完整的如下：</p>
+<h2 id="三、vs上的配置">三、vs上的配置</h2><p>3.1 新建工程，建立好之后，在右侧找到属性管理器<br><img src="../image/opencv_setup2.jpg" alt=""><br>3.2 在debug上右键，添加新项目属性表，添加好之后，右键，属性<br>3.3 在通用属性/VC++目录中包含目录和库目录添加路径如下：<br><img src="../image/opencv_setup3.jpg" alt=""></p>
+<p><img src="../image/opencv_setup4.jpg" alt=""><br>3.4 在通用属性/链接器/输入/附加依赖库中添加opencv/build/x86/vc12/lib中末尾带d的lib文件，如下：<br><img src="../image/opencv_setup5.jpg" alt=""><br>(根据文件夹里面的内容来填写，图片中只是示例。)<br>完整的如下：</p>
 <blockquote>
 <p>opencv_calib3d2410d.lib<br>opencv_contrib2410d.lib<br>opencv_core2410d.lib<br>opencv_features2d2410d.lib<br>opencv_flann2410d.lib<br>opencv_gpu2410d.lib<br>opencv_highgui2410d.lib<br>opencv_imgproc2410d.lib<br>opencv_legacy2410d.lib<br>opencv_ml2410d.lib<br>opencv_nonfree2410d.lib<br>opencv_objdetect2410d.lib<br>opencv_ocl2410d.lib<br>opencv_photo2410d.lib<br>opencv_ts2410d.lib<br>opencv_video2410d.lib<br>opencv_videostab2410d.lib</p>
 </blockquote>
 <p>3.4 在release上进行上面同样的操作，只是最后一步附加链接库上添加末尾不带d的链接库。</p>
 <h2 id="四、vs上第一个opencv程序">四、vs上第一个opencv程序</h2><p>上一步vs配置好后，项目中添加c++文件。示例代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;opencv2/core/core.hpp&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;opencv2/highgui/highgui.hpp&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	Mat image = imread(<span class="string">"D://lena.jpg"</span>);</span><br><span class="line">	imshow(<span class="string">"test"</span>, image);</span><br><span class="line">	waitKey();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>得到结果如下：<br><img src="image/opencv_test.jpg" alt=""></p>
+<p>得到结果如下：<br><img src="../image/opencv_test.jpg" alt=""></p>
 <h2 id="五、总结">五、总结</h2><p>由于想学习Opencv,所以在博客上将陆续分享自己的学习心得。由于《learning opencv》是基于第一代opencv，且代码是基于C语言的，所以选择的学习书籍是来自英伟达的工程师张静翻译的《opencv2计算机视觉编程手册》。</p>
 <p>对于文章中出现的不足和错误，欢迎共同交流。</p>
 
@@ -234,10 +234,10 @@
     
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-          文章目錄
+          文章目录
         </li>
         <li class="sidebar-nav-overview" data-target="site-overview">
-          本站概覽
+          站点概览
         </li>
       </ul>
     
@@ -251,22 +251,22 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">8</span>
-            <span class="site-state-item-name">文章</span>
+            <span class="site-state-item-count">7</span>
+            <span class="site-state-item-name">日志</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
             <span class="site-state-item-count">2</span>
-            <span class="site-state-item-name">分類</span>
+            <span class="site-state-item-name">分类</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-tags">
           <a href="/tags">
             <span class="site-state-item-count">3</span>
-            <span class="site-state-item-name">標籤</span>
+            <span class="site-state-item-name">标签</span>
           </a>
         </div>
 
@@ -324,7 +324,7 @@
       <div class="footer-inner">
         <div class="copyright">
   
-  &copy; &nbsp; 
+  &copy; &nbsp;  2014 - 
   2015
   <span class="with-love">
     <i class="icon-heart"></i>
@@ -333,11 +333,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>

@@ -2,8 +2,6 @@
 <html class="theme-next use-motion theme-next-next">
 <head>
   
-    
-
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -64,7 +62,7 @@
       <li class="menu-item menu-item-home">
         <a href="/">
           <i class="menu-item-icon icon-home"></i> <br />
-          首頁
+          首页
         </a>
       </li>
     
@@ -72,7 +70,7 @@
       <li class="menu-item menu-item-categories">
         <a href="/categories">
           <i class="menu-item-icon icon-categories"></i> <br />
-          分類
+          分类
         </a>
       </li>
     
@@ -80,7 +78,7 @@
       <li class="menu-item menu-item-archives">
         <a href="/archives">
           <i class="menu-item-icon icon-archives"></i> <br />
-          歸檔
+          归档
         </a>
       </li>
     
@@ -88,7 +86,7 @@
       <li class="menu-item menu-item-tags">
         <a href="/tags">
           <i class="menu-item-icon icon-tags"></i> <br />
-          標籤
+          标签
         </a>
       </li>
     
@@ -127,7 +125,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2015-04-07
+            发表于 2015-04-07
           
         </span>
 
@@ -156,14 +154,14 @@
 
         
           <p><strong>选择排序（Selection sort）</strong>是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。[1]</p>
-<p><img src="image/Selection_sort_animation.gif" alt="">[2]</p>
+<p><img src="../image/Selection_sort_animation.gif" alt="">[2]</p>
 <p>c++实例代码如下</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SelectSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> m)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        min=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[min]&gt;arr[j])</span><br><span class="line">                min=j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i != min)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> temp=arr[i];</span><br><span class="line">            arr[i]=arr[min];</span><br><span class="line">            arr[min]=temp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">9</span>]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">6</span>&#125;;</span><br><span class="line">    SelectSort(a,<span class="number">9</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"sorted order:"</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">9</span>;k++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果如下：<br><img src="image/selectsort1.jpg" alt=""></p>
+<p>结果如下：<br><img src="../image/selectsort1.jpg" alt=""></p>
 <p>为了了解选择排序的每一步，把每一步排序的过程打印下来，代码如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SelectSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> m)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        min=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[min]&gt;arr[j])</span><br><span class="line">                min=j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i != min)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> temp=arr[i];</span><br><span class="line">            arr[i]=arr[min];</span><br><span class="line">            arr[min]=temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"第"</span> &lt;&lt; i+<span class="number">1</span> &lt;&lt; <span class="string">"次选择:"</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;m;k++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; arr[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">9</span>]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">6</span>&#125;;</span><br><span class="line">    SelectSort(a,<span class="number">9</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sorted order:"</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">9</span>;k++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>得到的结果：</p>
-<p><img src="image/selectsort2.jpg" alt=""></p>
+<p><img src="../image/selectsort2.jpg" alt=""></p>
 <p>很明显，选择排序的算法过程是：</p>
 <ul>
 <li>假定第一个元素最小；</li>
@@ -240,10 +238,10 @@
     
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-          文章目錄
+          文章目录
         </li>
         <li class="sidebar-nav-overview" data-target="site-overview">
-          本站概覽
+          站点概览
         </li>
       </ul>
     
@@ -257,22 +255,22 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">8</span>
-            <span class="site-state-item-name">文章</span>
+            <span class="site-state-item-count">7</span>
+            <span class="site-state-item-name">日志</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
             <span class="site-state-item-count">2</span>
-            <span class="site-state-item-name">分類</span>
+            <span class="site-state-item-name">分类</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-tags">
           <a href="/tags">
             <span class="site-state-item-count">3</span>
-            <span class="site-state-item-name">標籤</span>
+            <span class="site-state-item-name">标签</span>
           </a>
         </div>
 
@@ -312,7 +310,7 @@
         <div class="post-toc">
           
           
-            <p class="post-toc-empty">此文章未包含目錄</p>
+            <p class="post-toc-empty">此文章未包含目录</p>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -330,7 +328,7 @@
       <div class="footer-inner">
         <div class="copyright">
   
-  &copy; &nbsp; 
+  &copy; &nbsp;  2014 - 
   2015
   <span class="with-love">
     <i class="icon-heart"></i>
@@ -339,11 +337,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>

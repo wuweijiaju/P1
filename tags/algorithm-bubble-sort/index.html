@@ -34,7 +34,7 @@
 
 
 
-  <title> 標籤: algorithm bubble_sort // 王子小 </title>
+  <title> 标签: algorithm bubble_sort // 王子小 </title>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
       <li class="menu-item menu-item-home">
         <a href="/">
           <i class="menu-item-icon icon-home"></i> <br />
-          首頁
+          首页
         </a>
       </li>
     
@@ -70,7 +70,7 @@
       <li class="menu-item menu-item-categories">
         <a href="/categories">
           <i class="menu-item-icon icon-categories"></i> <br />
-          分類
+          分类
         </a>
       </li>
     
@@ -78,7 +78,7 @@
       <li class="menu-item menu-item-archives">
         <a href="/archives">
           <i class="menu-item-icon icon-archives"></i> <br />
-          歸檔
+          归档
         </a>
       </li>
     
@@ -86,7 +86,7 @@
       <li class="menu-item menu-item-tags">
         <a href="/tags">
           <i class="menu-item-icon icon-tags"></i> <br />
-          標籤
+          标签
         </a>
       </li>
     
@@ -108,7 +108,7 @@
   <div class="collection-title">
     <h2 >
       algorithm bubble_sort
-      <small>標籤</small>
+      <small>标签</small>
     </h2>
   </div>
 
@@ -133,14 +133,14 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2015-03-28
+            发表于 2015-03-28
           
         </span>
 
         
           
             <span class="post-category">
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; 分类于
               
                 <a href="/categories/algorithm/">algorithm</a>
 
@@ -175,10 +175,10 @@
           <p><strong>冒泡排序（Bubble Sort）</strong>是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
 <p>C++实例代码如下<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> n)</span><span class="comment">//n是数组长度</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=n-<span class="number">2</span>;j&gt;=i;j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">                arr[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n=<span class="number">9</span>;</span><br><span class="line">    <span class="keyword">int</span> a[n]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">6</span>&#125;;</span><br><span class="line">    BubbleSort(a,n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"After sorted : "</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;n;k++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>于是得到以下结果<br><img src="image/bubblesort1.jpg" alt=""></p>
+<p>于是得到以下结果<br><img src="../image/bubblesort1.jpg" alt=""></p>
 <p>如果想仔细观察冒泡排序的每一步的过程，适当修改代码如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> n)</span><span class="comment">//n是数组长度</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=n-<span class="number">2</span>;j&gt;=i;j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"\n第"</span> &lt;&lt; i+<span class="number">1</span> &lt;&lt; <span class="string">"轮，"</span> &lt;&lt; n-<span class="number">1</span>-j &lt;&lt; <span class="string">"次冒泡 ："</span>;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">                arr[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;n;k++)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; arr[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n=<span class="number">9</span>;</span><br><span class="line">    <span class="keyword">int</span> a[n]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">6</span>&#125;;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Before sorted :  "</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;n;k++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    BubbleSort(a,n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"\nAfter sorted : "</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;n;k++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>得到结果如下：<br><img src="image/bubblesort2.jpg" alt=""></p>
+<p>得到结果如下：<br><img src="../image/bubblesort2.jpg" alt=""></p>
 <p>从数字的移动可以看出，冒泡排序之冒泡的含义了。</p>
 <p>下面来分析冒泡排序的时间复杂度。</p>
 <ul>
@@ -210,7 +210,7 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/hello-world/">Hello World</a>
+                <a href="/shell_sort/"></a>
               
             </div>
 
@@ -251,10 +251,10 @@
     
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-          文章目錄
+          文章目录
         </li>
         <li class="sidebar-nav-overview" data-target="site-overview">
-          本站概覽
+          站点概览
         </li>
       </ul>
     
@@ -268,22 +268,22 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">8</span>
-            <span class="site-state-item-name">文章</span>
+            <span class="site-state-item-count">7</span>
+            <span class="site-state-item-name">日志</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
             <span class="site-state-item-count">2</span>
-            <span class="site-state-item-name">分類</span>
+            <span class="site-state-item-name">分类</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-tags">
           <a href="/tags">
             <span class="site-state-item-count">3</span>
-            <span class="site-state-item-name">標籤</span>
+            <span class="site-state-item-name">标签</span>
           </a>
         </div>
 
@@ -323,7 +323,7 @@
         <div class="post-toc">
           
           
-            <p class="post-toc-empty">此文章未包含目錄</p>
+            <p class="post-toc-empty">此文章未包含目录</p>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -341,7 +341,7 @@
       <div class="footer-inner">
         <div class="copyright">
   
-  &copy; &nbsp; 
+  &copy; &nbsp;  2014 - 
   2015
   <span class="with-love">
     <i class="icon-heart"></i>
@@ -350,11 +350,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>
