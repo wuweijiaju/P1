@@ -143,7 +143,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            发表于 2015-03-28
+            发表于 2015-03-27
           
         </span>
 
@@ -183,7 +183,9 @@
 
         
           <p><strong>选择排序（Selection sort）</strong>是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。[1]</p>
-<p><img src="../image/Selection_sort_animation.gif" alt="">[2]<br><a id="more"></a><br>c++实例代码如下</p>
+<p><img src="../image/Selection_sort_animation.gif" alt="">[2]</p>
+<a id="more"></a>
+<p>c++实例代码如下</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SelectSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> m)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        min=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[min]&gt;arr[j])</span><br><span class="line">                min=j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i != min)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> temp=arr[i];</span><br><span class="line">            arr[i]=arr[min];</span><br><span class="line">            arr[min]=temp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">9</span>]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">6</span>&#125;;</span><br><span class="line">    SelectSort(a,<span class="number">9</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"sorted order:"</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">9</span>;k++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>结果如下：<br><img src="../image/selectsort1.jpg" alt=""></p>
 <p>为了了解选择排序的每一步，把每一步排序的过程打印下来，代码如下：</p>
@@ -225,13 +227,13 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/shell_sort/">排序算法之希尔排序</a>
+                <a href="/insert_sort/">排序算法之插入排序</a>
               
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/opencv_config/">opencv2的安装、在VS上的配置以及第一个示例</a>
+                <a href="/bubble_sort/">排序算法之冒泡排序</a>
               
             </div>
           </div>
@@ -276,7 +278,7 @@
 
     <div class="site-overview">
       <div class="site-author motion-element">
-        <img class="site-author-image" src="/images/default_avatar.jpg" alt="Luo Shang" />
+        <img class="site-author-image" src="http://i2.tietuku.com/c8ea45d0aefe7cfc.jpg" alt="Luo Shang" />
         <p class="site-author-name">Luo Shang</p>
       </div>
       <p class="site-description motion-element">C/C++ | python | 图像处理</p>

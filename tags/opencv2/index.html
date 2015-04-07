@@ -44,7 +44,7 @@
   </script>
 
 
-  <title> 标签: opencv2 vs2013 // 王子小 </title>
+  <title> 标签: opencv2 // 王子小 </title>
 </head>
 
 <body>
@@ -117,7 +117,7 @@
             
   <div class="collection-title">
     <h2 >
-      opencv2 vs2013
+      opencv2
       <small>标签</small>
     </h2>
   </div>
@@ -183,21 +183,25 @@
 
         
           <p>由于想学习Opencv,所以在博客上将陆续分享自己的学习心得。由于《learning opencv》是基于第一代opencv，且代码是基于C语言的，所以选择的学习书籍是来自英伟达的工程师张静翻译的《opencv2计算机视觉编程手册》。</p>
-<p>对于文章中出现的不足和错误，欢迎共同交流。<br><a id="more"></a></p>
-<h2 id="一、准备">一、准备</h2><h3 id="1-1软件下载">1.1软件下载</h3><p>官网 <a href="http://opencv.org/" target="_blank" rel="external">opencv</a><br>github <a href="https://github.com/Itseez/opencv" target="_blank" rel="external">opencv</a><br>官网cmake <a href="http://www.cmake.org/" target="_blank" rel="external">cmake</a></p>
+<p>对于文章中出现的不足和错误，欢迎共同交流。</p>
+<a id="more"></a>
+<h1 id="准备">准备</h1><h2 id="软件下载">软件下载</h2><p>官网 <a href="http://opencv.org/" target="_blank" rel="external">opencv</a><br>github <a href="https://github.com/Itseez/opencv" target="_blank" rel="external">opencv</a><br>官网cmake <a href="http://www.cmake.org/" target="_blank" rel="external">cmake</a></p>
 <p>目前opencv最新版本是是Opencv2.4.11,最新的开发版本是3.0beta。<br>cmake最新版本是cmake3.2.1。</p>
 <p>我本人使用的是opencv2.4.10，cmake3.1.0。</p>
-<h3 id="1-2_opencv下载后的文件夹">1.2 opencv下载后的文件夹</h3><p>opencv包含build和sources这两个文件夹（projects是我自己建立的文件夹）<br><img src="../image/opencv_setup1.jpg" alt=""></p>
-<h2 id="二、cmake编译">二、cmake编译</h2><p>2.1 打开cmake,在source code源代码里面填写opencv/sources路径，在build the binaried编译器里面填写编译器VS的版本（视个人情况而定）。本人的如下：<br><img src="../image/opencv_cmake.jpg" alt=""></p>
-<p>2.2 点击configure，弹出对话框选中对应的本地编译器，如下：<br><img src="../image/opencv_cmake2.jpg" alt=""></p>
-<p>2.3 点击generate，等待编译完成。</p>
-<h2 id="三、vs上的配置">三、vs上的配置</h2><p>3.1 新建工程，建立好之后，在右侧找到属性管理器<br><img src="../image/opencv_setup2.jpg" alt=""><br>3.2 在debug上右键，添加新项目属性表，添加好之后，右键，属性<br>3.3 在通用属性/VC++目录中包含目录和库目录添加路径如下：<br><img src="../image/opencv_setup3.jpg" alt=""></p>
-<p><img src="../image/opencv_setup4.jpg" alt=""><br>3.4 在通用属性/链接器/输入/附加依赖库中添加opencv/build/x86/vc12/lib中末尾带d的lib文件，如下：<br><img src="../image/opencv_setup5.jpg" alt=""><br>(根据文件夹里面的内容来填写，图片中只是示例。)<br>完整的如下：</p>
+<h2 id="opencv下载后的文件夹">opencv下载后的文件夹</h2><p>opencv包含build和sources这两个文件夹（projects是我自己建立的文件夹）<br><img src="../image/opencv_setup1.jpg" alt=""></p>
+<h1 id="cmake编译">cmake编译</h1><h2 id="cmake选择源文件">cmake选择源文件</h2><p>打开cmake,在source code源代码里面填写opencv/sources路径，在build the binaried编译器里面填写编译器VS的版本（视个人情况而定）。本人的如下：<br><img src="../image/opencv_cmake.jpg" alt=""></p>
+<h2 id="cmake编译-1">cmake编译</h2><p>点击configure，弹出对话框选中对应的本地编译器，如下：<br><img src="../image/opencv_cmake2.jpg" alt=""></p>
+<h2 id="cmake生成解决方案">cmake生成解决方案</h2><p>点击generate，等待编译完成。</p>
+<h1 id="vs上的配置">vs上的配置</h1><h2 id="新建">新建</h2><p>新建工程，建立好之后，在右侧找到属性管理器<br><img src="../image/opencv_setup2.jpg" alt=""></p>
+<h2 id="属性">属性</h2><p>在debug上右键，添加新项目属性表，添加好之后，右键，属性</p>
+<h2 id="添加路径">添加路径</h2><p>在通用属性/VC++目录中包含目录和库目录添加路径如下：<br><img src="../image/opencv_setup3.jpg" alt=""></p>
+<p><img src="../image/opencv_setup4.jpg" alt=""></p>
+<h2 id="附加链接库">附加链接库</h2><p>在通用属性/链接器/输入/附加依赖库中添加opencv/build/x86/vc12/lib中末尾带d的lib文件，如下：<br><img src="../image/opencv_setup5.jpg" alt=""><br>(根据文件夹里面的内容来填写，图片中只是示例。)<br>完整的如下：</p>
 <blockquote>
 <p>opencv_calib3d2410d.lib<br>opencv_contrib2410d.lib<br>opencv_core2410d.lib<br>opencv_features2d2410d.lib<br>opencv_flann2410d.lib<br>opencv_gpu2410d.lib<br>opencv_highgui2410d.lib<br>opencv_imgproc2410d.lib<br>opencv_legacy2410d.lib<br>opencv_ml2410d.lib<br>opencv_nonfree2410d.lib<br>opencv_objdetect2410d.lib<br>opencv_ocl2410d.lib<br>opencv_photo2410d.lib<br>opencv_ts2410d.lib<br>opencv_video2410d.lib<br>opencv_videostab2410d.lib</p>
 </blockquote>
-<p>3.4 在release上进行上面同样的操作，只是最后一步附加链接库上添加末尾不带d的链接库。</p>
-<h2 id="四、vs上第一个opencv程序">四、vs上第一个opencv程序</h2><p>上一步vs配置好后，项目中添加c++文件。示例代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;opencv2/core/core.hpp&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;opencv2/highgui/highgui.hpp&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	Mat image = imread(<span class="string">"D://lena.jpg"</span>);</span><br><span class="line">	imshow(<span class="string">"test"</span>, image);</span><br><span class="line">	waitKey();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="release同debug">release同debug</h2><p>在release上进行上面同样的操作，只是最后一步附加链接库上添加末尾不带d的链接库。</p>
+<h1 id="vs上第一个opencv程序">vs上第一个opencv程序</h1><p>上一步vs配置好后，项目中添加c++文件。示例代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;opencv2/core/core.hpp&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;opencv2/highgui/highgui.hpp&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	Mat image = imread(<span class="string">"D://lena.jpg"</span>);</span><br><span class="line">	imshow(<span class="string">"test"</span>, image);</span><br><span class="line">	waitKey();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>得到结果如下：<br><img src="../image/opencv_test.jpg" alt=""></p>
 
         
@@ -209,8 +213,8 @@
         
           <div class="post-tags">
             
-              <a href="/tags/opencv2-vs2013/">
-                #opencv2 vs2013
+              <a href="/tags/opencv2/">
+                #opencv2
               </a>
             
           </div>
@@ -220,7 +224,7 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/select_sort/">排序算法之选择排序</a>
+                <a href="/shell_sort/">排序算法之希尔排序</a>
               
             </div>
 
@@ -271,7 +275,7 @@
 
     <div class="site-overview">
       <div class="site-author motion-element">
-        <img class="site-author-image" src="/images/default_avatar.jpg" alt="Luo Shang" />
+        <img class="site-author-image" src="http://i2.tietuku.com/c8ea45d0aefe7cfc.jpg" alt="Luo Shang" />
         <p class="site-author-name">Luo Shang</p>
       </div>
       <p class="site-description motion-element">C/C++ | python | 图像处理</p>

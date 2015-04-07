@@ -183,89 +183,46 @@
 
         
           <p><strong>插入排序（Insertion Sort）</strong>是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。[1]</p>
-<p><img src="../image/Insertion_sort_animation.gif" alt="">[2]<br><a id="more"></a><br>先来看插入排序的步骤：</p>
+<p><img src="../image/Insertion_sort_animation.gif" alt="">[2]</p>
+<a id="more"></a>
+<p>先来看插入排序的步骤：</p>
 <ul>
-<li>首先假设第i个元素已经有序；</li>
-<li>第i+1个原始抽取出来作为参考，于是i+1位置可看作空位；</li>
-<li>把第i+1个元素左边的元素（即第1到i个元素）依次从右向左与第i+1个元素相比较，若比i+1大，向后挪一个位置；</li>
-<li>上面排完之后数列中还剩一个位置，把之前抽取出的第i个元素补上。</li>
-<li>i将数组循环遍历，重复以上过程。</li>
+<li><p>首先假设第i个元素已经有序；</p>
+</li>
+<li><p>第i+1个原始抽取出来作为参考，于是i+1位置可看作空位；</p>
+</li>
+<li><p>把第i+1个元素左边的元素（即第1到i个元素）依次从右向左与第i+1个元素相比较，若比i+1大，向后挪一个位置；</p>
+</li>
+<li><p>上面排完之后数列中还剩一个位置，把之前抽取出的第i个元素补上。</p>
+</li>
+<li><p>i将数组循环遍历，重复以上过程。</p>
+</li>
 </ul>
-<p>下面用实例来说明。<br>原始数列为：</p>
-<table>
-<thead>
-<tr>
-<th>3</th>
-<th>5</th>
-<th>2</th>
-<th>4</th>
-<th>7</th>
-<th>9</th>
-<th>8</th>
-<th>1</th>
-<th>6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>下面用实例来说明。</p>
+<p>原始数列为：</p>
+<p>|3|5|2|4|7|9|8|1|6</p>
+<p>|-|</p>
 <p>我们假设3为有序数列，已经排好。所以从5开始。只需要看3和5两个数。5抽取出来，由于3比5小，数列不变。</p>
 <p>接下来3、5有序，只需看3、5、2三个数。2抽取出来，由于5比2大，所以5向右挪一个位置，即覆盖2刚刚的位置；3比2大，3向右挪一个位置，即覆盖最初5所在的位置；2补上空位，即第一个位置。得：</p>
-<table>
-<thead>
-<tr>
-<th>2</th>
-<th>3</th>
-<th>5</th>
-<th>4</th>
-<th>7</th>
-<th>9</th>
-<th>8</th>
-<th>1</th>
-<th>6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>|2|3|5|4|7|9|8|1|6</p>
+<p>|————|————|</p>
 <p>同理，继续下去，4抽取出来，只需看2、3、5、4四个数。得：</p>
-<table>
-<thead>
-<tr>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>7</th>
-<th>9</th>
-<th>8</th>
-<th>1</th>
-<th>6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>|2|3|4|5|7|9|8|1|6</p>
+<p>|————|————|</p>
 <p>后面的依次类推。</p>
 <hr>
 <p>c++实例代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,t;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t=arr[i];</span><br><span class="line">        <span class="keyword">for</span>(j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span>&amp;&amp;arr[j]&gt;t;j--)</span><br><span class="line">            arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">        arr[j+<span class="number">1</span>]=t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">9</span>]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">6</span>&#125;;</span><br><span class="line">    InsertSort(a,<span class="number">9</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sorted order: "</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">9</span>;k++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> n)</span></span><br><span class="line"></span><br><span class="line"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i,j,t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> t=arr[i];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span>&amp;&amp;arr[j]&gt;t;j--)</span><br><span class="line"></span><br><span class="line">            arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line"></span><br><span class="line">        arr[j+<span class="number">1</span>]=t;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span><br><span class="line"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">9</span>]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">6</span>&#125;;</span><br><span class="line"></span><br><span class="line">    InsertSort(a,<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sorted order: "</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">9</span>;k++)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
 <p><img src="../image/insertsort1.jpg" alt=""></p>
 <p>下面来分析插入算法的时间复杂度：</p>
 <ul>
-<li>最坏的情况，是逆序。比较次数O(n<sup>2</sup>),移到次数也是O(n<sup>2</sup>)，所以时间复杂度是O(n<sup>2</sup>)。</li>
-<li>最好的情况，正序。比较次数O(n)，交换次数为0，所以时间复杂度是O(n)。</li>
-<li>插入排序不适合对于数据量比较大的排序应用。但是，如果需要排序的数据量很小，例如，量级小于千，那么插入排序还是一个不错的选择。 插入排序在工业级库中也有着广泛的应用，在STL的sort算法和stdlib的qsort算法中，都将插入排序作为快速排序的补充，用于少量元素的排序（通常为8个或以下）。[3]</li>
+<li><p>最坏的情况，是逆序。比较次数O(n<sup>2</sup>),移到次数也是O(n<sup>2</sup>)，所以时间复杂度是O(n<sup>2</sup>)。</p>
+</li>
+<li><p>最好的情况，正序。比较次数O(n)，交换次数为0，所以时间复杂度是O(n)。</p>
+</li>
+<li><p>插入排序不适合对于数据量比较大的排序应用。但是，如果需要排序的数据量很小，例如，量级小于千，那么插入排序还是一个不错的选择。 插入排序在工业级库中也有着广泛的应用，在STL的sort算法和stdlib的qsort算法中，都将插入排序作为快速排序的补充，用于少量元素的排序（通常为8个或以下）。[3]</p>
+</li>
 </ul>
 <hr>
 <p>[1][2][3]<a href="http://zh.wikipedia.org/wiki/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F" target="_blank" rel="external">插入排序维基百科</a></p>
@@ -296,7 +253,7 @@
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/huawei_offer/">华为2015年武汉地区技术服务工程师面试offer</a>
+                <a href="/select_sort/">排序算法之选择排序</a>
               
             </div>
           </div>
@@ -341,7 +298,7 @@
 
     <div class="site-overview">
       <div class="site-author motion-element">
-        <img class="site-author-image" src="/images/default_avatar.jpg" alt="Luo Shang" />
+        <img class="site-author-image" src="http://i2.tietuku.com/c8ea45d0aefe7cfc.jpg" alt="Luo Shang" />
         <p class="site-author-name">Luo Shang</p>
       </div>
       <p class="site-description motion-element">C/C++ | python | 图像处理</p>
